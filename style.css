@@ -210,3 +210,19 @@ footer h3 {
     gap: 10px;
     margin-bottom: 10px;
 }
+
+#contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.contenedor-bloques {
+    padding: 30px 100px;
+}
+
+.opciones-juegos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

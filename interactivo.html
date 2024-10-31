@@ -7,12 +7,22 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
+    <header>
+
+    </header>
 
     <main>
-        <button onclick="generarHermanos()">Hermanos</button>
-        <button>Juego 2</button>
-        <button>Juego 3</button>
+        <div class="opciones-juegos">
+            <button class="btn-inicio" onclick="generarHermanos()">LISTAR HERMANOS</button>
+            <button class="btn-inicio" onclick="generarBloques()">GENERAR BLOQUES</button>
+            <button class="btn-inicio" onclick="competirJuego()">YAN QUEN PO!!!</button>
+        </div>        
     </main>
+    <section>
+        <div id="contenedor" class="contenedor-bloques">
+
+        </div>
+    </section>
     
     
     <script src="./app.js"></script>
