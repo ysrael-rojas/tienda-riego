@@ -57,7 +57,7 @@ nav {
     padding: 20px;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: space-between;
     color: #fff;
   font-size: 24px; /* Ajusta el tamaño del texto según sea necesario */
   font-weight: bold;
