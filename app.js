@@ -34,7 +34,7 @@ function generarColorHex() {
     return "#" + colorAleatorio.padStart(6, '0');
 }
 
-function limpiarBloques() {
+function limpiarContenedor() {
 
     document.getElementById("contenedor").innerHTML = '';
 
@@ -42,7 +42,7 @@ function limpiarBloques() {
 
 function generarBloques() {
 
-    limpiarBloques();
+    limpiarContenedor();
 
     const nroBloques = Number(prompt("Ingresar el numero de bloques a generar"));
 
@@ -122,7 +122,106 @@ function competirJuego() {
             anunciaResultado('GANASTE', opcionJugador, opcionMaquina);
         }
     }
+}
+
+function determinarEdad() {
+
+    const anioNacimiento = Number(prompt("INGRESA EL AÑO DE NACIMIENTO"));
+    return alert(calcularEdad(anioNacimiento));
+
+}
+
+function calcularEdad(anioNacimiento) {    
+
+    const fecha = new Date();
+    const anioActual = fecha.getFullYear();
+
+    return `TIENES ${anioActual-anioNacimiento} AÑOS`;
+}
+
+function convertirTemperatura() {
+
+    const temperaturaCelcius = Number(prompt("INGRESA TEMPERATURA EN °C"));
+
+    return alert(convertirFahrenheit(temperaturaCelcius));
+
+}
+
+function convertirFahrenheit(temperaturaCelcius) {
+
+    const temperaturaFahrenheit = (temperaturaCelcius*9/5) + 32;
+    
+    return `${temperaturaCelcius}°C SON ${temperaturaFahrenheit}°F`;
+
+}
+
+function contarVocales() {
+
+    const texto = prompt("INGRESA UN TEXTO:").toLowerCase();
+
+    return alert(verificarVocalesTexto(texto));
+    
+}
+
+function verificarVocalesTexto(texto) {
+
+    const vocales = ["a","e","i","o","u"];
+    let contadorVocales = 0;
+
+    for(let i=0 ; i<vocales.length ; i++) {
+        for(let x=0 ; x<texto.length ; x++){
+            if (vocales[i] === texto[x]) {
+                contadorVocales++;
+            }
+        }
+    }
+    return `TU TEXTO TIENE ${contadorVocales} VOCALES`;
+
+}
+
+function generarTablaMultiplicar() {
+
+    limpiarContenedor();
+
+    const numero = Number(prompt("INGRESA NUMERO A GENERAR TABLA DE MULTIPLICAR:"));
+
+    const tabla = [];
+
+    for(let i = 0; i < 10; i++) {
+
+        tabla.push(`${numero} X ${i + 1} = ${(i + 1)*numero}`);
+
+    }
+
+    mostrarTablaConsola(numero, tabla);
+    mostarTablaDom(numero, tabla);
+
+}
+
+function mostrarTablaConsola(numero, tabla) {
+
+    console.log(`TABLA DEL NUMERO: ${numero}`);
+
+    for(elemento of tabla) {
+        console.log(`==> ${elemento}`);
+    }
+}
+
+function mostarTablaDom(numero, tabla) {
+
+    const contenedor = document.getElementById("contenedor");
+
+    const nuevoElementoTitulo = document.createElement("h2");
+    nuevoElementoTitulo.innerHTML = `TABLA DEL NUMERO: ${numero}`;
 
     
+    const nuevoElementoParrafo = document.createElement("p");
 
+    for(elemento of tabla) {
+
+        nuevoElementoParrafo.innerHTML += `==> ${elemento}<br>`;
+        
+    }
+    contenedor.appendChild(nuevoElementoTitulo);
+    contenedor.appendChild(nuevoElementoParrafo);
 }
