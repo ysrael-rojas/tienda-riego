@@ -24,13 +24,20 @@
     </main>
     <section>
         <div id="game-area">
-            <label> Cuantos nombres desea registrar? </label>
-            <input id="input-numero-hermanos" type="text" placeholder="numero de hermanos">
-            <div>
-                <label> Ingrese el nombre: </label>
-                <input id="input-nombre-hermano" type="text" placeholder="Nombre hermano">
-                <button onclick="agregarNombreHermanoLista()">Agregar</button>
+            <div class="form-container">
+                <div>
+                    <label for="input-numero-hermanos"> Cuantos nombres desea registrar? </label>
+                    <input id="input-numero-hermanos" type="text" placeholder="numero de hermanos">
+                    <button class="form-hermanos" id="btn-procesar-hermanos" onclick="procesarHermanos()">Procesar</button>
+                </div>                
+                <div>
+                    <label for="input-nombre-hermano"> Ingrese el nombre: </label>
+                    <input id="input-nombre-hermano" type="text" placeholder="Nombre hermano" disabled>
+                    <button class="form-hermanos" id="btn-agregar-nombre-hermano" onclick="agregarNombreHermanoLista()" disabled>Agregar</button>
+                </div>
             </div>
+            
+            
             <div id="area-listado-hermanos">
                 
             </div>

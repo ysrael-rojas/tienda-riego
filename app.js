@@ -14,15 +14,51 @@ function verificarDatos(nroHermanos) {
 
 function agregarNombreHermanoLista() {
 
-    hermanos.push(inputNombreHermano.value);
-    console.log(hermanos);
-    listarHermanos(hermanos);
+    if(hermanos.length < inputNroHermanos.value){
+
+        hermanos.push(inputNombreHermano.value);
+        listarHermanos(hermanos);
+
+    }else {
+        alert("LLENASTE LISTA HERMANOS");
+    }
+
+    
 }
 
+
+
 function listarHermanos(hermanos) {
+
+    areaListadoHermanos.innerHTML = "";
+
+    const ul = document.createElement("ul");     
+
     for(hermano of hermanos) {
-        console.log(hermano);
+        const li = document.createElement("li");
+        li.textContent = hermano;
+        ul.appendChild(li);
     }
+
+    areaListadoHermanos.appendChild(ul);
+}
+
+function procesarHermanos() {
+
+    document.getElementById("input-numero-hermanos").disabled = true;
+    document.getElementById("btn-procesar-hermanos").disabled = true;
+    document.getElementById("input-nombre-hermano").disabled = false;
+    document.getElementById("btn-agregar-nombre-hermano").disabled = false;
+
+}
+
+function verificarParaDesabilitar() {
+
+    if(hermanos.length===inputNroHermanos){
+        inputNombreHermano.disabled = true;
+        
+    }
+
 }
 
 function generarHermanos() {
