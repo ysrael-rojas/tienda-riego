@@ -1,4 +1,10 @@
 
+const inputNroHermanos = document.getElementById("input-numero-hermanos");
+const inputNombreHermano = document.getElementById("input-nombre-hermano");
+const areaListadoHermanos = document.getElementById("area-listado-hermanos");
+
+const hermanos = [];
+
 function verificarDatos(nroHermanos) {
 
     if(isNaN(nroHermanos)){
@@ -6,23 +12,37 @@ function verificarDatos(nroHermanos) {
     }
 }
 
+function agregarNombreHermanoLista() {
+
+    hermanos.push(inputNombreHermano.value);
+    console.log(hermanos);
+    listarHermanos(hermanos);
+}
+
+function listarHermanos(hermanos) {
+    for(hermano of hermanos) {
+        console.log(hermano);
+    }
+}
+
 function generarHermanos() {
 
-    const hermanos = [];
+   
 
-    const nroHermanos = Number(prompt("Ingresa la cantidad de hermanos a registrar."));
+    const nroHermanos = Number(inputNroHermanos.value);
+    console.log(nroHermanos);
 
-    verificarDatos(nroHermanos);
+    //verificarDatos(nroHermanos);
 
     let contador = 0;
-
+/* 
     while (contador < nroHermanos) {
         contador++;
         const nombreHermano = prompt("Ingresa el nombre nro " + contador + ":");
         hermanos.push(nombreHermano);        
     }
 
-    console.log(hermanos);
+    console.log(hermanos); */
 
 }
 
